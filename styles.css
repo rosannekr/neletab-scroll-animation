@@ -7,8 +7,39 @@ body {
   padding: 0;
 }
 
-.container {
+/* .container {
   width: 80%;
   margin: 0 auto;
+  border: 2px solid black;
+} */
+
+.panel {
   height: 100vh;
+  /* width: 100%; */
+  color: white;
+  font-size: 3rem;
+  position: relative;
+}
+
+.panel span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.panel.one {
+  background: #7209b7;
+}
+
+.panel.two {
+  background: #3a0ca3;
+}
+
+.panel.three {
+  background: #4361ee;
+}
+
+.panel.four {
+  background: #4cc9f0;
 }
