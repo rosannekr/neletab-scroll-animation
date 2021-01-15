@@ -13,6 +13,10 @@ body {
   border: 2px solid black;
 } */
 
+.padding {
+  height: 100vh;
+}
+
 .more-content {
   height: 100vh;
   background: black;
@@ -52,15 +56,6 @@ body {
 
 /* Bottle */
 
-/* .panel.two {
-  display: flex;
-} */
-
-/* .left,
-.right {
-  flex-grow: 1;
-} */
-
 #bottle-svg {
   width: 100%;
 }
@@ -83,6 +78,8 @@ body {
   position: absolute;
 }
 
+/* Mobile styles */
+
 @media (max-width: 649px) {
   #bottle-svg {
     height: 70vh;
@@ -95,6 +92,10 @@ body {
   .right section {
     text-align: center;
     padding-bottom: 2.5em;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
   }
 
   .right h3 {
@@ -118,6 +119,8 @@ body {
     padding-top: 0.5em;
   }
 }
+
+/* Desktop styles */
 
 @media (min-width: 650px) {
   .panel.two {
