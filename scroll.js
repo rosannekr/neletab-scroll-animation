@@ -56,6 +56,7 @@ tl.to("#tablets-svg .text", { y: 20, opacity: 0 })
     y: -20,
     opacity: 0,
   })
+  .from("#waves", { yPercent: 100 })
   .from("#step2", {
     y: 50,
     opacity: 0,
@@ -71,6 +72,10 @@ tl.to("#tablets-svg .text", { y: 20, opacity: 0 })
     y: 50,
     opacity: 0,
   })
+  .add("cap")
+  .from("#bottle-cap", { yPercent: -100, opacity: 0 })
+  .to("#bottle-cap", { x: -8 }, "<")
+  .fromTo("#bottle-cap", { x: -8 }, { x: 0, duration: 0.5 }, "-=0.5")
   .from("#tip3", {
     opacity: 0,
   })
