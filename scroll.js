@@ -9,30 +9,8 @@ const tl = gsap.timeline({
     end: "+=1000%",
     markers: true,
     pin: true,
-    // toggleActions: "play pause reverse pause",
   },
 });
-
-// gsap.set("#wave-right", { xPercent: 97 });
-// gsap.set("#waves", { scaleX: 2, transformOrigin: "0 50%" });
-
-// Wave rotation
-
-// const waveDarkRotation = gsap.to("#wave-dark-mask .wave-rotate", {
-//   rotate: 360,
-//   transformOrigin: "50% 50%",
-//   duration: 6,
-//   ease: "linear",
-//   repeat: -1,
-// });
-
-// const waveLightRotation = gsap.from("#wave-light-mask .wave-rotate", {
-//   rotate: 360,
-//   transformOrigin: "50% 50%",
-//   duration: 6,
-//   ease: "linear",
-//   repeat: -1,
-// });
 
 // Timeline
 
@@ -60,14 +38,27 @@ tl.to("#tablets-svg .text", { y: 20, opacity: 0 })
     { scaleX: 0.7, transformOrigin: "0% 50%", duration: 2 },
     "tabletMorph"
   )
-  .to(".tablet", { opacity: 0 })
+  .to(".tablet.multi, .tablet.bathroom", { opacity: 0 }, "-=0.5")
+  .to(".tablet.window", { opacity: 0 })
   .from("#tablet-img", { opacity: 0 }, "<")
-  .from("#tablet-title", { opacity: 0, y: 20, ease: "power1" })
+  .from("#tablet-title", { opacity: 0, y: 20, ease: "power1" }, "<")
   .from("#tablet-text", { opacity: 0, y: 20, ease: "power1" })
+  .to("#tablet-text span:nth-of-type(1)", { opacity: 0, y: -20 })
+  .from("#tablet-text span:nth-of-type(2)", { opacity: 0, y: 20 }, "-=0.5")
+  .to("#tablet-text span:nth-of-type(2)", { opacity: 0, y: -20 })
+  .from("#tablet-text span:nth-of-type(3)", { opacity: 0, y: 20 }, "-=0.5")
+  .to("#tablet-text span:nth-of-type(3)", { opacity: 0, y: -20 })
+  .from("#tablet-text span:nth-of-type(4)", { opacity: 0, y: 20 }, "-=0.5")
+  .to("#tablet-text span:nth-of-type(4)", { opacity: 0, y: -20 })
+  .from("#tablet-text span:nth-of-type(5)", { opacity: 0, y: 20 }, "-=0.5")
   .to("#tablet-title", { opacity: 0, y: -20, ease: "power1" })
-  .to("#tablet-text", { opacity: 0, y: -20, ease: "power1" }, "<")
-  .to("#tablet-img", { scale: 0.5, yPercent: 100, transformOrigin: "50% 50%" })
-  .from(".panel.two", { yPercent: 100 }, "<")
+  .to("#tablet-text", { opacity: 0, duration: 0.5 }, "<")
+  .to(
+    "#tablet-img",
+    { scale: 0.5, yPercent: 100, transformOrigin: "50% 50%" },
+    "<"
+  )
+  .from(".panel.two", { yPercent: 100 }, "-=0.5")
   .from("#step1", {
     y: 50,
     opacity: 0,

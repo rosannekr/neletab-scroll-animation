@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Libre+Franklin&family=Work+Sans:wght@400;700&display=swap");
+
 * {
   box-sizing: border-box;
 }
@@ -5,13 +7,8 @@
 body {
   margin: 0;
   padding: 0;
+  font-family: "Work Sans", sans-serif;
 }
-
-/* .container {
-  width: 80%;
-  margin: 0 auto;
-  border: 2px solid black;
-} */
 
 .padding {
   height: 100vh;
@@ -40,12 +37,24 @@ body {
 }
 
 #tablet-title {
-  font-size: 4vmin;
+  font-size: 3.5vmin;
   margin-bottom: 2em;
+  font-family: "Libre Franklin", sans-serif;
+  font-weight: 400;
 }
 
 #tablet-text {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
+  position: absolute;
+  left: 45%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+}
+
+#tablet-text span {
+  position: absolute;
+  text-indent: 5px;
 }
 
 #tablets-svg {
