@@ -60,9 +60,22 @@ body {
   width: 100%;
 }
 
-.panel.two div {
-  /* border: 2px solid black; */
+/* .wave-dark {
+  animation: wave 2s linear infinite;
 }
+
+.wave-light {
+  animation: wave 2s reverse infinite;
+}
+
+@keyframes wave {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+} */
 
 .panel.two {
   display: flex;
