@@ -90,7 +90,7 @@ tl.to("#tablets-svg .text", { y: 20, opacity: 0 })
       transformOrigin: "50% 50%",
       duration: 2,
       ease: "linear",
-      repeat: 1,
+      repeat: 0.5,
     },
     "<"
   )
@@ -101,7 +101,7 @@ tl.to("#tablets-svg .text", { y: 20, opacity: 0 })
       transformOrigin: "50% 50%",
       duration: 2,
       ease: "linear",
-      repeat: 1,
+      repeat: 0.5,
     },
     "<"
   )
@@ -115,6 +115,8 @@ tl.to("#tablets-svg .text", { y: 20, opacity: 0 })
   //   .to(waveLightRotation, { paused: true })
   //   .call(() => waveDarkRotation.pause())
   //   .call(() => waveLightRotation.pause())
+  .from("#waves", { opacity: 0.7 }, "<")
+  .to("#tablet-img", { opacity: 0 }, "<")
   .to("#step2, #tip2", {
     y: -20,
     opacity: 0,
@@ -127,7 +129,7 @@ tl.to("#tablets-svg .text", { y: 20, opacity: 0 })
   .from("#bottle-cap", { yPercent: -100, opacity: 0 }, "<")
   .to("#bottle-cap", { x: -8 }, "<")
   .fromTo("#bottle-cap", { x: -8 }, { x: 0, duration: 0.5 }, "-=0.5")
-  .from("#waves", { opacity: 0.5 }, "<")
+
   .from("#tip3", {
     opacity: 0,
   })
