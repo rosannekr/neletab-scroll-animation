@@ -129,8 +129,11 @@ tl.to("#tablets-svg .text", { y: 20, opacity: 0 })
     opacity: 0,
   })
   .from("#bottle-blue", { opacity: 0 })
-  .to("#bottle-svg", { opacity: 0 }, "<")
-  //   .to("#bottle-svg", { scale: 0.7, transformOrigin: "50% 50%" })
-  .from("#bottle-green, #bottle-yellow", { opacity: 0 });
-//   .to("#bottle-green", { xPercent: -50 })
-//   .to("#bottle-yellow", { xPercent: 50 }, "<");
+  .to("#bottle-cap, #bottle, #waves", { opacity: 0 }, "<")
+  .to("#bottle-svg", {
+    attr: { viewBox: "-105 -200 426.28 764.37" },
+  })
+  .from("#bottle-green, #bottle-yellow", { opacity: 0, duration: 0.1 }, "<")
+  .to("#bottle-green", { xPercent: -30 }, "<")
+  .to("#bottle-yellow", { xPercent: 30 }, "<")
+  .from(".panel.two a", { opacity: 0, duration: 0.5 }, "-=0.5");

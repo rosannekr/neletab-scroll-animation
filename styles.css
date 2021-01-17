@@ -92,11 +92,19 @@ body {
   position: relative;
 }
 
-#bottles-svg {
+a {
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 1em 1.5em;
+  background: #296f7f;
+  color: white;
   position: absolute;
-  top: 0;
-  left: 0;
-  /* border: 1px solid red; */
+  text-align: center;
+  max-width: 300px;
+  width: 80%;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 20%;
 }
 
 /* Mobile styles */
@@ -136,15 +144,8 @@ body {
   }
 
   .middle {
-    flex: 0 1 80vh;
+    flex: 0 1 70vh;
     padding-top: 0.5em;
-  }
-
-  #bottles-svg {
-    height: 71vh;
-    left: 50%;
-    top: 1%;
-    transform: translateX(-50%);
   }
 }
 
