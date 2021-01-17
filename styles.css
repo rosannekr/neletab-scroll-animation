@@ -8,6 +8,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Work Sans", sans-serif;
+  color: #548b8c;
 }
 
 .padding {
@@ -110,6 +111,13 @@ a {
 /* Mobile styles */
 
 @media (max-width: 649px) {
+  #tablet-text {
+    font-size: 1rem;
+    left: 40%;
+    top: 40%;
+    width: 100%;
+  }
+
   #bottle-svg {
     height: 70vh;
   }
