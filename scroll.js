@@ -127,4 +127,10 @@ tl.to("#tablets-svg .text", { y: 20, opacity: 0 })
   .to("#step3, #tip3", {
     y: -20,
     opacity: 0,
-  });
+  })
+  .from("#bottle-blue", { opacity: 0 })
+  .to("#bottle-svg", { opacity: 0 }, "<")
+  //   .to("#bottle-svg", { scale: 0.7, transformOrigin: "50% 50%" })
+  .from("#bottle-green, #bottle-yellow", { opacity: 0 });
+//   .to("#bottle-green", { xPercent: -50 })
+//   .to("#bottle-yellow", { xPercent: 50 }, "<");

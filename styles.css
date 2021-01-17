@@ -67,24 +67,8 @@ body {
 
 #bottle-svg {
   width: 100%;
+  /* border: 2px solid black; */
 }
-
-/* .wave-dark {
-  animation: wave 2s linear infinite;
-}
-
-.wave-light {
-  animation: wave 2s reverse infinite;
-}
-
-@keyframes wave {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-} */
 
 .panel.two {
   display: flex;
@@ -98,6 +82,21 @@ body {
 .right section {
   font-size: 1.2rem;
   position: absolute;
+}
+
+.panel.three {
+  padding-top: 0.5em;
+}
+
+.middle {
+  position: relative;
+}
+
+#bottles-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* border: 1px solid red; */
 }
 
 /* Mobile styles */
@@ -140,6 +139,13 @@ body {
     flex: 0 1 80vh;
     padding-top: 0.5em;
   }
+
+  #bottles-svg {
+    height: 71vh;
+    left: 50%;
+    top: 1%;
+    transform: translateX(-50%);
+  }
 }
 
 /* Desktop styles */
@@ -163,7 +169,7 @@ body {
   }
 
   .middle {
-    padding-top: 1em;
+    padding-top: 0.5em;
     flex: 0 1 auto;
   }
 }
