@@ -23,9 +23,32 @@ body {
   position: relative;
 }
 
-svg {
-  /* border: 1px solid black; */
+#grid {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  /* border: 2px solid blue; */
+  display: grid;
+  font-size: 1.2rem;
 }
+
+/* svg {
+  border: 2px solid black;
+} */
+
+#bottle-text {
+  position: relative;
+}
+
+#bottle-text section {
+  position: absolute;
+}
+
+/* #grid div {
+  border: 2px solid black;
+} */
 
 /* #bottle-text {
   position: absolute;
@@ -35,7 +58,6 @@ svg {
   text-align: left;
   width: 100%;
   font-size: 1.2rem;
-  border: 1px solid black;
 }
 
 #bottle-text section {
@@ -96,75 +118,34 @@ a {
 /* Mobile styles */
 
 @media (max-width: 649px) {
-  /* #tablets-svg {
-    transform: scale(1.2);
-  } */
+  .container {
+    padding-top: 3em;
+  }
 
-  /* #tablet-text {
-    font-size: 1rem;
-    left: 50%;
-    top: 40%;
-    width: 100%;
-    bottom: 25%;
-    transform: translate(-50%, -50%);
-  } */
+  #grid {
+    grid-template-columns: 1;
+    grid-template-rows: 0 2fr 1fr;
+  }
 
-  /* .right section {
-    text-align: center;
-    padding-bottom: 2.5em;
-    top: 0;
+  #bottle-text section {
     left: 50%;
     transform: translateX(-50%);
     width: 100%;
   }
-
-  .right h3 {
-    margin: 0.25em;
-  }
-
-  .right p {
-    margin: 0.25em;
-  }
-
-  .left {
-    flex: 0 1 0;
-  }
-
-  .right {
-    flex: 0 1 auto;
-  }
-
-  .middle {
-    flex: 0 1 70vh;
-    padding-top: 0.5em;
-  } */
 }
 
 /* Desktop styles */
 
 @media (min-width: 650px) {
-  /*
-  .panel.two {
-    flex-direction: row;
+  #grid {
+    grid-template-columns: repeat(3, 1fr);
+    text-align: left;
   }
 
-  .left {
-    flex: 1 1 0;
+  #grid div:nth-of-type(3) {
+    padding-top: 16rem;
   }
 
-  .right {
-    flex: 1 1 0;
-  }
-
-  .right section {
-    max-width: 400px;
-    padding-top: 10em;
-  }
-
-  .middle {
-    padding-top: 0.5em;
-    flex: 0 1 auto;
-  }*/
   svg {
     /* border: 1px solid black; */
     transform-origin: 50% 10%;

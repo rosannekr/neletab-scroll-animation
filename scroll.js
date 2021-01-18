@@ -59,21 +59,21 @@ tl.to("#tablets-text", { y: 20, opacity: 0 })
   //   .to("#tablet-text", { opacity: 0, duration: 0.5 }, "<")
   .to("#tablet-img", { scale: 0.5, yPercent: 100, transformOrigin: "50% 50%" })
   .from("#bottle", { yPercent: 100, opacity: 0 }, "-=0.5")
-  //   .from("#step1", {
-  //     y: 50,
-  //     opacity: 0,
-  //   })
-  //   .from("#tip1", {
-  //     opacity: 0,
-  //   })
-  //   .to("#step1, #tip1", {
-  //     y: -20,
-  //     opacity: 0,
-  //   })
-  //   .from("#step2", {
-  //     y: 50,
-  //     opacity: 0,
-  //   })
+  .from("#step1", {
+    y: 50,
+    opacity: 0,
+  })
+  .from("#tip1", {
+    opacity: 0,
+  })
+  .to("#step1, #tip1", {
+    y: -20,
+    opacity: 0,
+  })
+  .from("#step2", {
+    y: 50,
+    opacity: 0,
+  })
   .to(
     "#wave-dark-mask .wave-rotate",
     {
@@ -100,12 +100,6 @@ tl.to("#tablets-text", { y: 20, opacity: 0 })
   .from("#tip2", {
     opacity: 0,
   })
-  //   .add(waveDarkRotation.pause())
-  //   .add(waveLightRotation.pause())
-  //   .to(waveDarkRotation, { paused: true })
-  //   .to(waveLightRotation, { paused: true })
-  //   .call(() => waveDarkRotation.pause())
-  //   .call(() => waveLightRotation.pause())
   .from("#waves", { opacity: 0.7 }, "<")
   .to("#tablet-img", { opacity: 0 }, "<")
   .to("#step2, #tip2", {
