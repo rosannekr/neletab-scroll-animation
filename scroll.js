@@ -1,5 +1,7 @@
 gsap.registerPlugin(ScrollTrigger);
 
+// gsap.set("svg", { scale: 1.5, transformOrigin: "50% 0%" });
+
 const tl = gsap.timeline({
   defaults: { ease: "linear", duration: 1 },
   scrollTrigger: {
@@ -11,6 +13,18 @@ const tl = gsap.timeline({
     pin: true,
   },
 });
+
+//.to("#tablet-img", { scale: 0.5, yPercent: 100, transformOrigin: "50% 50%" })
+
+const tabletResize = () => {
+  if (window.innerWidth < 650) {
+    tl.to("#tablet-img", {
+      scale: 0.5,
+      yPercent: 100,
+      transformOrigin: "50% 50%",
+    });
+  }
+};
 
 // Timeline
 
@@ -57,7 +71,7 @@ tl.to("#tablets-text", { y: 20, opacity: 0 })
   //   .from("#tablet-text span:nth-of-type(5)", { opacity: 0, y: 20 }, "-=0.5")
   //   .to("#tablet-title", { opacity: 0, y: -20, ease: "power1" })
   //   .to("#tablet-text", { opacity: 0, duration: 0.5 }, "<")
-  .to("#tablet-img", { scale: 0.5, yPercent: 100, transformOrigin: "50% 50%" })
+  .call(tabletResize)
   .from("#bottle", { yPercent: 100, opacity: 0 }, "-=0.5")
   .from("#step1", {
     y: 50,
@@ -130,4 +144,5 @@ tl.to("#tablets-text", { y: 20, opacity: 0 })
   .from("#bottle-green, #bottle-yellow", { opacity: 0, duration: 0.1 })
   .to("#bottle-green", { xPercent: -60 })
   .to("#bottle-yellow", { xPercent: 60 }, "<")
-  .to("svg", { scale: 0.7 });
+  .to("svg", { scale: 1 })
+  .from("a", { opacity: 0, duration: 0.5 }, "-=0.5");

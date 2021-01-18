@@ -14,13 +14,13 @@ body {
 }
 
 .container {
-  width: 90%;
   height: 100vh;
   max-width: 750px;
   margin: 0 auto;
   text-align: center;
-  /* border: 2px solid red; */
+  border: 2px solid red;
   position: relative;
+  padding-top: 5em;
 }
 
 #grid {
@@ -34,9 +34,11 @@ body {
   font-size: 1.2rem;
 }
 
-/* svg {
+svg {
   border: 2px solid black;
-} */
+  /* width: 50%; */
+  /* height: 70%; */
+}
 
 #bottle-text {
   position: relative;
@@ -106,25 +108,30 @@ a {
   padding: 1em 1.5em;
   background: #296f7f;
   color: white;
-  position: absolute;
+  /* position: absolute; */
   text-align: center;
   max-width: 300px;
-  width: 80%;
-  left: 50%;
+  /* width: 80%; */
+  /* left: 50%;
   transform: translateX(-50%);
-  bottom: 20%;
+  bottom: 20%; */
+  display: inline-block;
 }
 
 /* Mobile styles */
 
 @media (max-width: 649px) {
   .container {
-    padding-top: 3em;
+    padding-top: 10em;
+  }
+
+  .container {
+    width: 90%;
   }
 
   #grid {
     grid-template-columns: 1;
-    grid-template-rows: 0 2fr 1fr;
+    grid-template-rows: 2fr 1fr;
   }
 
   #bottle-text section {
@@ -132,22 +139,32 @@ a {
     transform: translateX(-50%);
     width: 100%;
   }
+
+  /* svg {
+    transform-origin: 50% 100%;
+  } */
 }
 
 /* Desktop styles */
 
 @media (min-width: 650px) {
+  .container {
+    width: 30%;
+  }
+
   #grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1;
     text-align: left;
   }
 
-  #grid div:nth-of-type(3) {
-    padding-top: 16rem;
+  #bottle-text {
+    margin-top: 16rem;
   }
 
-  svg {
-    /* border: 1px solid black; */
-    transform-origin: 50% 10%;
-  }
+  /* svg {
+    transform-origin: 50% 0%;
+    height: 70%;
+    transform: scale(1.5);
+  } */
 }
