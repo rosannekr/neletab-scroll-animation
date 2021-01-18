@@ -1,5 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Libre+Franklin&family=Work+Sans:wght@400;700&display=swap");
 
+/* TODO */
+/* make first svg bigger on mobile */
+
 * {
   box-sizing: border-box;
 }
@@ -47,9 +50,9 @@ body {
 #tablet-text {
   font-size: 1.5rem;
   position: absolute;
-  left: 45%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  left: 50%;
+  bottom: 10%;
+  transform: translateX(-50%);
   width: 80%;
 }
 
@@ -111,11 +114,17 @@ a {
 /* Mobile styles */
 
 @media (max-width: 649px) {
+  #tablets-svg {
+    transform: scale(1.2);
+  }
+
   #tablet-text {
     font-size: 1rem;
-    left: 40%;
-    top: 40%;
+    left: 50%;
+    /* top: 40%; */
     width: 100%;
+    bottom: 25%;
+    transform: translate(-50%, -50%);
   }
 
   #bottle-svg {
