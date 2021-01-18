@@ -14,7 +14,7 @@ const tl = gsap.timeline({
 
 // Timeline
 
-tl.to("#tablets-svg .text", { y: 20, opacity: 0 })
+tl.to("#tablets-text", { y: 20, opacity: 0 })
   .add("tabletMorph")
   .to(".tablet.bathroom", {
     x: 250,
@@ -41,12 +41,12 @@ tl.to("#tablets-svg .text", { y: 20, opacity: 0 })
   .to(".tablet.multi, .tablet.bathroom", { opacity: 0 }, "-=0.5")
   .to(".tablet.window", { opacity: 0 })
   .from("#tablet-img", { opacity: 0 }, "<")
-  .from("#tablet-title", { opacity: 0, y: 20, ease: "power1" }, "<")
-  .from("#tablet-text p:nth-of-type(1)", { opacity: 0, y: 20, ease: "power1" })
-  .from("#tablet-text p:nth-of-type(2)", { opacity: 0, y: 20, ease: "power1" })
-  .from("#tablet-text p:nth-of-type(3)", { opacity: 0, y: 20, ease: "power1" })
-  .from("#tablet-text p:nth-of-type(4)", { opacity: 0, y: 20, ease: "power1" })
-  .from("#tablet-text p:nth-of-type(5)", { opacity: 0, y: 20, ease: "power1" })
+  //   .from("#tablet-title", { opacity: 0, y: 20, ease: "power1" }, "<")
+  //   .from("#tablet-text p:nth-of-type(1)", { opacity: 0, y: 20, ease: "power1" })
+  //   .from("#tablet-text p:nth-of-type(2)", { opacity: 0, y: 20, ease: "power1" })
+  //   .from("#tablet-text p:nth-of-type(3)", { opacity: 0, y: 20, ease: "power1" })
+  //   .from("#tablet-text p:nth-of-type(4)", { opacity: 0, y: 20, ease: "power1" })
+  //   .from("#tablet-text p:nth-of-type(5)", { opacity: 0, y: 20, ease: "power1" })
   //   .to("#tablet-text span:nth-of-type(1)", { opacity: 0, y: -20 })
   //   .from("#tablet-text span:nth-of-type(2)", { opacity: 0, y: 20 }, "-=0.5")
   //   .to("#tablet-text span:nth-of-type(2)", { opacity: 0, y: -20 })
@@ -55,29 +55,25 @@ tl.to("#tablets-svg .text", { y: 20, opacity: 0 })
   //   .from("#tablet-text span:nth-of-type(4)", { opacity: 0, y: 20 }, "-=0.5")
   //   .to("#tablet-text span:nth-of-type(4)", { opacity: 0, y: -20 })
   //   .from("#tablet-text span:nth-of-type(5)", { opacity: 0, y: 20 }, "-=0.5")
-  .to("#tablet-title", { opacity: 0, y: -20, ease: "power1" })
-  .to("#tablet-text", { opacity: 0, duration: 0.5 }, "<")
-  .to(
-    "#tablet-img",
-    { scale: 0.5, yPercent: 100, transformOrigin: "50% 50%" },
-    "<"
-  )
-  .from(".panel.two", { yPercent: 100 }, "-=0.5")
-  .from("#step1", {
-    y: 50,
-    opacity: 0,
-  })
-  .from("#tip1", {
-    opacity: 0,
-  })
-  .to("#step1, #tip1", {
-    y: -20,
-    opacity: 0,
-  })
-  .from("#step2", {
-    y: 50,
-    opacity: 0,
-  })
+  //   .to("#tablet-title", { opacity: 0, y: -20, ease: "power1" })
+  //   .to("#tablet-text", { opacity: 0, duration: 0.5 }, "<")
+  .to("#tablet-img", { scale: 0.5, yPercent: 100, transformOrigin: "50% 50%" })
+  .from("#bottle", { yPercent: 100, opacity: 0 }, "-=0.5")
+  //   .from("#step1", {
+  //     y: 50,
+  //     opacity: 0,
+  //   })
+  //   .from("#tip1", {
+  //     opacity: 0,
+  //   })
+  //   .to("#step1, #tip1", {
+  //     y: -20,
+  //     opacity: 0,
+  //   })
+  //   .from("#step2", {
+  //     y: 50,
+  //     opacity: 0,
+  //   })
   .to(
     "#wave-dark-mask .wave-rotate",
     {
@@ -134,10 +130,10 @@ tl.to("#tablets-svg .text", { y: 20, opacity: 0 })
   })
   .from("#bottle-blue", { opacity: 0 })
   .to("#bottle-cap, #bottle, #waves", { opacity: 0 }, "<")
-  .to("#bottle-svg", {
-    attr: { viewBox: "-105 -200 426.28 764.37" },
-  })
-  .from("#bottle-green, #bottle-yellow", { opacity: 0, duration: 0.1 }, "<")
-  .to("#bottle-green", { xPercent: -30 }, "<")
-  .to("#bottle-yellow", { xPercent: 30 }, "<")
-  .from(".panel.two a", { opacity: 0, duration: 0.5 }, "-=0.5");
+  //   .to("#bottle-svg", {
+  //     attr: { viewBox: "-105 -200 426.28 764.37" },
+  //   })
+  .from("#bottle-green, #bottle-yellow", { opacity: 0, duration: 0.1 })
+  .to("#bottle-green", { xPercent: -60 })
+  .to("#bottle-yellow", { xPercent: 60 }, "<")
+  .to("svg", { scale: 0.7 });

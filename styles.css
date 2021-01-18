@@ -11,11 +11,20 @@ body {
   padding: 0;
   font-family: "Work Sans", sans-serif;
   color: #548b8c;
-  background: red;
 }
 
-.padding {
+.container {
+  width: 90%;
   height: 100vh;
+  max-width: 750px;
+  margin: 0 auto;
+  text-align: center;
+  /* border: 2px solid red; */
+  position: relative;
+}
+
+svg {
+  /* border: 1px solid black; */
 }
 
 .more-content {
@@ -23,24 +32,9 @@ body {
   background: black;
 }
 
-.panel {
-  height: 100vh;
-  width: 100vw;
-  /* width: 100%; */
-  font-size: 3rem;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
 /* Tablets */
 
-.panel.one {
-  text-align: center;
-  padding-top: 3em;
-}
-
-#tablet-title {
+/* #tablet-title {
   font-size: 3.5vmin;
   margin-bottom: 2em;
   font-family: "Libre Franklin", sans-serif;
@@ -59,42 +53,15 @@ body {
 #tablet-text span {
   position: absolute;
   text-indent: 5px;
-}
+} */
 
-#tablets-svg {
+/* #tablets-svg {
   width: 80%;
   max-width: 750px;
   display: inline-block;
-}
+} */
 
 /* Bottle */
-
-#bottle-svg {
-  width: 100%;
-  /* border: 2px solid black; */
-}
-
-.panel.two {
-  display: flex;
-  height: 100vh;
-}
-
-.right {
-  position: relative;
-}
-
-.right section {
-  font-size: 1.2rem;
-  position: absolute;
-}
-
-.panel.three {
-  padding-top: 0.5em;
-}
-
-.middle {
-  position: relative;
-}
 
 a {
   text-decoration: none;
@@ -114,28 +81,20 @@ a {
 /* Mobile styles */
 
 @media (max-width: 649px) {
-  #tablets-svg {
+  /* #tablets-svg {
     transform: scale(1.2);
-  }
+  } */
 
-  #tablet-text {
+  /* #tablet-text {
     font-size: 1rem;
     left: 50%;
-    /* top: 40%; */
+    top: 40%;
     width: 100%;
     bottom: 25%;
     transform: translate(-50%, -50%);
-  }
+  } */
 
-  #bottle-svg {
-    height: 70vh;
-  }
-
-  .panel.two {
-    flex-direction: column;
-  }
-
-  .right section {
+  /* .right section {
     text-align: center;
     padding-bottom: 2.5em;
     top: 0;
@@ -163,12 +122,13 @@ a {
   .middle {
     flex: 0 1 70vh;
     padding-top: 0.5em;
-  }
+  } */
 }
 
 /* Desktop styles */
 
 @media (min-width: 650px) {
+  /*
   .panel.two {
     flex-direction: row;
   }
@@ -189,5 +149,9 @@ a {
   .middle {
     padding-top: 0.5em;
     flex: 0 1 auto;
+  }*/
+  svg {
+    /* border: 1px solid black; */
+    transform-origin: 50% 10%;
   }
 }
