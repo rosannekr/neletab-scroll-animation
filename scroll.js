@@ -53,14 +53,17 @@ tl.to("#tablets-svg .text", { y: 20, opacity: 0 })
   .from("#tablet-text", { opacity: 0, y: 20, ease: "power1" })
   .to("#tablet-text span:nth-of-type(1)", { opacity: 0, y: -15 }, "+=0.5")
   .from("#tablet-text span:nth-of-type(2)", { opacity: 0, y: 15 }, "-=0.5")
-  .to("#tablet-text span:nth-of-type(2)", { opacity: 0, y: -15 })
+  .to("#tablet-text span:nth-of-type(2)", { opacity: 0, y: -15 }, "+=0.5")
   .from("#tablet-text span:nth-of-type(3)", { opacity: 0, y: 15 }, "-=0.5")
-  .to("#tablet-text span:nth-of-type(3)", { opacity: 0, y: -15 })
+  .to("#tablet-text span:nth-of-type(3)", { opacity: 0, y: -15 }, "+=0.5")
   .from("#tablet-text span:nth-of-type(4)", { opacity: 0, y: 15 }, "-=0.5")
-  .to("#tablet-text span:nth-of-type(4)", { opacity: 0, y: -15 })
+  .to("#tablet-text span:nth-of-type(4)", { opacity: 0, y: -15 }, "+=0.5")
   .from("#tablet-text span:nth-of-type(5)", { opacity: 0, y: 15 }, "-=0.5")
   .to("#tablet-title", { opacity: 0, y: -20, ease: "power1" })
   .to("#tablet-text", { opacity: 0, duration: 0.5 }, "<")
+  .to("#tablets-svg", {
+    attr: { viewBox: "0 0 792.82 350" },
+  })
   .to(
     "#tablet-img",
     { scale: 0.5, yPercent: 100, transformOrigin: "50% 50%" },
