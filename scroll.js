@@ -4,7 +4,7 @@ gsap.registerPlugin(TextPlugin);
 const tl = gsap.timeline({
   defaults: { ease: "linear", duration: 1 },
   scrollTrigger: {
-    trigger: ".container",
+    trigger: ".scroll-container",
     scrub: true,
     start: "top top",
     end: "+=1000%",
