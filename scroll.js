@@ -129,6 +129,7 @@ tl.to("#tablets-svg .text", { y: 20, opacity: 0 })
   })
   .add("cap")
   .from("#bottle-cap", { yPercent: -100, opacity: 0 }, "<")
+  .from("#cap-mask-rect", { y: -500 }, "<")
   .to("#bottle-cap", { x: -8 }, "<")
   .fromTo("#bottle-cap", { x: -8 }, { x: 0, duration: 0.5 }, "-=0.5")
 

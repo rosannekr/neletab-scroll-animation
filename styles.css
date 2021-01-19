@@ -1,8 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Libre+Franklin&family=Work+Sans:wght@400;700&display=swap");
 
-/* TODO */
-/* make first svg bigger on mobile */
-
 * {
   box-sizing: border-box;
 }
@@ -25,7 +22,6 @@ body {
 .panel {
   height: 100vh;
   width: 100vw;
-  /* width: 100%; */
   font-size: 3rem;
   position: absolute;
   top: 0;
@@ -47,25 +43,11 @@ body {
   color: #000000;
 }
 
-#tablet-text {
-  font-size: 1rem;
-  /* position: absolute;
-  left: 30%;
-  bottom: 30%; */
-  /* border: 2px solid red; */
-  /* position: relative; */
-}
-
 #word-wrapper {
   display: inline-block;
   position: relative;
   /* border: 1px solid black; */
 }
-
-/* #tablet-text span {
-  position: absolute;
-  text-indent: 5px;
-} */
 
 #tablet-text span {
   display: inline-block;
@@ -73,10 +55,6 @@ body {
 
 #tablet-text .word {
   position: absolute;
-  /* opacity: 0; */
-  /* transform: translateX(-110px); */
-  /* border: 1px solid black; */
-  /* text-align: left; */
   left: 0;
   white-space: nowrap;
 }
@@ -151,6 +129,10 @@ a {
     font-size: 1.25rem;
   }
 
+  #tablet-text {
+    font-size: 1.25rem;
+  }
+
   #bottle-svg {
     height: 70vh;
   }
@@ -216,6 +198,6 @@ a {
   }
 
   #tablet-text {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
   }
 }
