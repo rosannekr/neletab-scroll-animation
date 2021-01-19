@@ -1,4 +1,5 @@
 gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(TextPlugin);
 
 const tl = gsap.timeline({
   defaults: { ease: "linear", duration: 1 },
@@ -38,23 +39,26 @@ tl.to("#tablets-svg .text", { y: 20, opacity: 0 })
     { scaleX: 0.7, transformOrigin: "0% 50%", duration: 2 },
     "tabletMorph"
   )
-  .to(".tablet.multi, .tablet.bathroom", { opacity: 0 }, "-=0.5")
+  .to(".tablet.multi, .tablet.bathroom", { opacity: 0 }, "-=0.8")
   .to(".tablet.window", { opacity: 0 })
   .from("#tablet-img", { opacity: 0 }, "<")
   .from("#tablet-title", { opacity: 0, y: 20, ease: "power1" }, "<")
-  .from("#tablet-text p:nth-of-type(1)", { opacity: 0, y: 20, ease: "power1" })
-  .from("#tablet-text p:nth-of-type(2)", { opacity: 0, y: 20, ease: "power1" })
-  .from("#tablet-text p:nth-of-type(3)", { opacity: 0, y: 20, ease: "power1" })
-  .from("#tablet-text p:nth-of-type(4)", { opacity: 0, y: 20, ease: "power1" })
-  .from("#tablet-text p:nth-of-type(5)", { opacity: 0, y: 20, ease: "power1" })
-  //   .to("#tablet-text span:nth-of-type(1)", { opacity: 0, y: -20 })
-  //   .from("#tablet-text span:nth-of-type(2)", { opacity: 0, y: 20 }, "-=0.5")
-  //   .to("#tablet-text span:nth-of-type(2)", { opacity: 0, y: -20 })
-  //   .from("#tablet-text span:nth-of-type(3)", { opacity: 0, y: 20 }, "-=0.5")
-  //   .to("#tablet-text span:nth-of-type(3)", { opacity: 0, y: -20 })
-  //   .from("#tablet-text span:nth-of-type(4)", { opacity: 0, y: 20 }, "-=0.5")
-  //   .to("#tablet-text span:nth-of-type(4)", { opacity: 0, y: -20 })
-  //   .from("#tablet-text span:nth-of-type(5)", { opacity: 0, y: 20 }, "-=0.5")
+  .to(
+    "#tablets-svg",
+    {
+      attr: { viewBox: "0 0 792.82 150" },
+    },
+    "<"
+  )
+  .from("#tablet-text", { opacity: 0, y: 20, ease: "power1" })
+  .to("#tablet-text span:nth-of-type(1)", { opacity: 0, y: -15 }, "+=0.5")
+  .from("#tablet-text span:nth-of-type(2)", { opacity: 0, y: 15 }, "-=0.5")
+  .to("#tablet-text span:nth-of-type(2)", { opacity: 0, y: -15 })
+  .from("#tablet-text span:nth-of-type(3)", { opacity: 0, y: 15 }, "-=0.5")
+  .to("#tablet-text span:nth-of-type(3)", { opacity: 0, y: -15 })
+  .from("#tablet-text span:nth-of-type(4)", { opacity: 0, y: 15 }, "-=0.5")
+  .to("#tablet-text span:nth-of-type(4)", { opacity: 0, y: -15 })
+  .from("#tablet-text span:nth-of-type(5)", { opacity: 0, y: 15 }, "-=0.5")
   .to("#tablet-title", { opacity: 0, y: -20, ease: "power1" })
   .to("#tablet-text", { opacity: 0, duration: 0.5 }, "<")
   .to(

@@ -11,7 +11,6 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Work Sans", sans-serif;
-  color: #548b8c;
 }
 
 .padding {
@@ -45,26 +44,48 @@ body {
   margin-bottom: 2em;
   font-family: "Libre Franklin", sans-serif;
   font-weight: 400;
+  color: #000000;
 }
 
 #tablet-text {
-  font-size: 1.5rem;
-  position: absolute;
-  left: 50%;
-  bottom: 10%;
-  transform: translateX(-50%);
-  width: 80%;
+  font-size: 1rem;
+  /* position: absolute;
+  left: 30%;
+  bottom: 30%; */
+  /* border: 2px solid red; */
+  /* position: relative; */
 }
 
-#tablet-text span {
+#word-wrapper {
+  display: inline-block;
+  position: relative;
+  /* border: 1px solid black; */
+}
+
+/* #tablet-text span {
   position: absolute;
   text-indent: 5px;
+} */
+
+#tablet-text span {
+  display: inline-block;
+}
+
+#tablet-text .word {
+  position: absolute;
+  /* opacity: 0; */
+  /* transform: translateX(-110px); */
+  /* border: 1px solid black; */
+  /* text-align: left; */
+  left: 0;
+  white-space: nowrap;
 }
 
 #tablets-svg {
   width: 80%;
   max-width: 750px;
   display: inline-block;
+  /* border: 2px solid black; */
 }
 
 /* Bottle */
@@ -118,13 +139,16 @@ a {
     transform: scale(1.2);
   }
 
-  #tablet-text {
+  /* #tablet-text {
     font-size: 1rem;
     left: 50%;
-    /* top: 40%; */
     width: 100%;
     bottom: 25%;
     transform: translate(-50%, -50%);
+  } */
+
+  #tablet-title {
+    font-size: 1.25rem;
   }
 
   #bottle-svg {
@@ -189,5 +213,9 @@ a {
   .middle {
     padding-top: 0.5em;
     flex: 0 1 auto;
+  }
+
+  #tablet-text {
+    font-size: 1.25rem;
   }
 }
