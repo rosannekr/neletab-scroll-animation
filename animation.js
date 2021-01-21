@@ -12,6 +12,24 @@ const tl = gsap.timeline({
   },
 });
 
+let tabletScale = 1;
+
+const tabletResize = () => {
+  let width = window.innerWidth;
+
+  if (width > 700) tabletScale = 0.45;
+  else if (width > 650) tabletScale = 0.5;
+  else if (width > 600) tabletScale = 0.4;
+  else if (width > 550) tabletScale = 0.45;
+  else if (width > 500) tabletScale = 0.5;
+  else if (width > 400) tabletScale = 0.6;
+  else if (width > 300) tabletScale = 0.7;
+  else if (width > 280) tabletScale = 0.8;
+  else if (width > 260) tabletScale = 0.9;
+};
+
+tabletResize();
+
 // Timeline
 
 tl.to("#tablets-svg .text", { y: 10, opacity: 0 })
@@ -59,7 +77,9 @@ tl.to("#tablets-svg .text", { y: 10, opacity: 0 })
   // .to("#tablets-svg", {
   //   attr: { viewBox: "0 0 792.82 350" },
   // })
-  .to("#tablet-img", { scale: 0.9, transformOrigin: "50% 50%" }, "<")
+  // .to("#tablet-img", { scale: 1, transformOrigin: "50% 50%" }, "<")
+  // .call(tabletResize)
+  .to("#tablet-img", { scale: tabletScale, transformOrigin: "50% 50%" }, "<")
   .from(".panel.two", { yPercent: 100, duration: 1.5 }, "-=0.5")
   .from("#step1", {
     y: 20,
