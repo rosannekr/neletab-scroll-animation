@@ -22,25 +22,43 @@ body {
 .panel {
   height: 100vh;
   width: 100vw;
-  font-size: 3rem;
   position: absolute;
   top: 0;
   left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* border: 2px solid red; */
+  text-align: center;
 }
 
 /* Tablets */
 
-.panel.one {
+/* .panel.one {
   text-align: center;
   padding-top: 3em;
-}
+} */
 
 #tablet-title {
-  font-size: 3.5vmin;
-  margin-bottom: 2em;
+  font-size: 1.2rem;
+  margin-bottom: 17.5px;
   font-family: "Libre Franklin", sans-serif;
   font-weight: 400;
-  color: #000000;
+}
+
+#tablet-text {
+  font-size: 1rem;
+}
+
+@media (min-width: 400px) {
+  #tablet-title {
+    font-size: 1.5rem;
+  }
+
+  #tablet-text {
+    font-size: 1.25rem;
+  }
 }
 
 #word-wrapper {
@@ -56,13 +74,18 @@ body {
 #tablet-text .word {
   position: absolute;
   left: 0;
-  white-space: nowrap;
+}
+
+/* Don't break words when there's enough screen width */
+@media (min-width: 400px) {
+  #tablet-text .word {
+    white-space: nowrap;
+  }
 }
 
 #tablets-svg {
-  width: 80%;
   max-width: 750px;
-  display: inline-block;
+  display: block;
   /* border: 2px solid black; */
 }
 
@@ -113,9 +136,9 @@ a {
 /* Mobile styles */
 
 @media (max-width: 649px) {
-  #tablets-svg {
+  /* #tablets-svg {
     transform: scale(1.2);
-  }
+  } */
 
   /* #tablet-text {
     font-size: 1rem;
@@ -125,13 +148,13 @@ a {
     transform: translate(-50%, -50%);
   } */
 
-  #tablet-title {
+  /* #tablet-title {
     font-size: 1.25rem;
   }
 
   #tablet-text {
     font-size: 1.25rem;
-  }
+  } */
 
   #bottle-svg {
     height: 70vh;
@@ -197,7 +220,7 @@ a {
     flex: 0 1 auto;
   }
 
-  #tablet-text {
+  /* #tablet-text {
     font-size: 1.5rem;
-  }
+  } */
 }
