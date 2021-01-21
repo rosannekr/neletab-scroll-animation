@@ -62,7 +62,7 @@ tl.to("#tablets-svg .text", { y: 10, opacity: 0 })
   .to("#tablet-img", { scale: 0.9, transformOrigin: "50% 50%" }, "<")
   .from(".panel.two", { yPercent: 100, duration: 1.5 }, "-=0.5")
   .from("#step1", {
-    y: 50,
+    y: 20,
     opacity: 0,
   })
   .from(
@@ -75,13 +75,13 @@ tl.to("#tablets-svg .text", { y: 10, opacity: 0 })
   .to(
     "#step1, #tip1",
     {
-      y: -20,
+      y: -10,
       opacity: 0,
     },
     "+=0.5"
   )
   .from("#step2", {
-    y: 50,
+    y: 20,
     opacity: 0,
   })
   .to(
@@ -118,13 +118,13 @@ tl.to("#tablets-svg .text", { y: 10, opacity: 0 })
   .to(
     "#step2, #tip2",
     {
-      y: -20,
+      y: -10,
       opacity: 0,
     },
     "+=0.5"
   )
   .from("#step3", {
-    y: 50,
+    y: 20,
     opacity: 0,
   })
   .add("cap")
@@ -143,7 +143,7 @@ tl.to("#tablets-svg .text", { y: 10, opacity: 0 })
   .to(
     "#step3, #tip3",
     {
-      y: -20,
+      y: -10,
       opacity: 0,
     },
     "+=0.5"
@@ -151,7 +151,7 @@ tl.to("#tablets-svg .text", { y: 10, opacity: 0 })
   .from("#bottle-blue", { opacity: 0 })
   .to("#bottle-cap, #bottle, #waves", { opacity: 0 }, "<")
   .to("#bottle-svg", {
-    attr: { viewBox: "-105 -200 426.28 764.37" },
+    attr: { viewBox: "-105 -50 426.28 620" },
   })
   .from("#bottle-green, #bottle-yellow", { opacity: 0, duration: 0.1 }, "<")
   .to(
