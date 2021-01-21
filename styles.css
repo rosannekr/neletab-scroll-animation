@@ -27,28 +27,39 @@ body {
   left: 0;
   display: flex;
   flex-direction: column;
+  text-align: center;
+  /* border: 2px solid red; */
+}
+
+.panel.one {
   justify-content: center;
   align-items: center;
-  /* border: 2px solid red; */
-  text-align: center;
+}
+
+.panel.two {
+  font-size: 1rem;
+  /* border: 2px solid blue; */
 }
 
 /* Tablets */
 
-/* .panel.one {
-  text-align: center;
-  padding-top: 3em;
-} */
+#tablets-svg {
+  max-width: 750px;
+  display: block;
+  /* border: 2px solid black; */
+}
 
 #tablet-title {
   font-size: 1.2rem;
-  margin-bottom: 17.5px;
   font-family: "Libre Franklin", sans-serif;
   font-weight: 400;
+  /* border: 2px solid red; */
 }
 
 #tablet-text {
   font-size: 1rem;
+  padding: 1.5em 0;
+  /* border: 2px solid red; */
 }
 
 @media (min-width: 400px) {
@@ -77,28 +88,18 @@ body {
 }
 
 /* Don't break words when there's enough screen width */
-@media (min-width: 400px) {
+@media (min-width: 310px) {
   #tablet-text .word {
     white-space: nowrap;
   }
 }
 
-#tablets-svg {
-  max-width: 750px;
-  display: block;
-  /* border: 2px solid black; */
-}
-
 /* Bottle */
 
 #bottle-svg {
-  width: 100%;
-  /* border: 2px solid black; */
-}
-
-.panel.two {
-  display: flex;
-  height: 100vh;
+  /* width: 100%; */
+  max-height: 80vh;
+  border: 2px solid black;
 }
 
 .right {
@@ -106,7 +107,6 @@ body {
 }
 
 .right section {
-  font-size: 1.2rem;
   position: absolute;
 }
 
@@ -118,15 +118,15 @@ body {
   position: relative;
 }
 
-a {
+.cta {
   text-decoration: none;
   font-size: 1rem;
-  padding: 1em 1.5em;
+  padding: 1em 0;
   background: #296f7f;
   color: white;
   position: absolute;
   text-align: center;
-  max-width: 300px;
+  max-width: 250px;
   width: 80%;
   left: 50%;
   transform: translateX(-50%);
@@ -200,6 +200,7 @@ a {
 @media (min-width: 650px) {
   .panel.two {
     flex-direction: row;
+    text-align: left;
   }
 
   .left {
@@ -219,8 +220,4 @@ a {
     padding-top: 0.5em;
     flex: 0 1 auto;
   }
-
-  /* #tablet-text {
-    font-size: 1.5rem;
-  } */
 }
