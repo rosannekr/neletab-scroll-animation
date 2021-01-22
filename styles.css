@@ -98,7 +98,7 @@ body {
 
 #bottle-svg {
   display: block;
-  /* border: 2px solid black; */
+  border: 2px solid black;
 }
 
 @media (min-width: 650px) {
@@ -110,7 +110,7 @@ body {
 
 .right {
   position: relative;
-  /* border: 2px solid red; */
+  border: 2px solid red;
 }
 
 .right section {
@@ -128,8 +128,11 @@ body {
   text-align: center;
   max-width: 240px;
   width: 90%;
-  display: inline-block;
   align-self: center;
+}
+
+.hide {
+  display: none;
 }
 
 /* Mobile styles */
@@ -161,6 +164,7 @@ body {
 
   .middle {
     flex: 1 1 66%;
+    margin-top: 55px;
   }
 }
 

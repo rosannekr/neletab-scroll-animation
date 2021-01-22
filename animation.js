@@ -1,5 +1,9 @@
 gsap.registerPlugin(ScrollTrigger);
 
+const init = () => {
+  gsap.from(".scroll-container", { autoAlpha: 0 });
+};
+
 const tl = gsap.timeline({
   defaults: { ease: "linear", duration: 1 },
   scrollTrigger: {
@@ -81,6 +85,10 @@ tl.to("#tablets-svg .text", { y: 10, opacity: 0 })
   // .to("#tablet-img", { scale: 1, transformOrigin: "50% 50%" }, "<")
   // .call(tabletResize)
   .to("#tablet-img", { scale: tabletScale, transformOrigin: "50% 50%" }, "<")
+  .call(() => {
+    document.querySelector(".animation-cta").classList.add("hide");
+    console.log("add");
+  })
   .from(".panel.two", { yPercent: 100, duration: 1.5 }, "-=0.5")
   .from("#step1", {
     y: 20,
@@ -186,4 +194,13 @@ tl.to("#tablets-svg .text", { y: 10, opacity: 0 })
     { xPercent: 34, yPercent: -3, scale: 0.88, transformOrigin: "50% 50%" },
     "<"
   )
-  .from(".panel.two a", { opacity: 0, duration: 0.5 }, "-=0.5");
+  .call(() => {
+    document.querySelector(".animation-cta").classList.remove("hide");
+    console.log("remove");
+  })
+  .from(".animation-cta", { opacity: 0, duration: 0.5 }, "-=0.5");
+
+window.addEventListener("load", () => {
+  console.log("page is fully loaded");
+  init();
+});
