@@ -63,32 +63,19 @@ tl.to("#tablets-svg .text", { y: 10, opacity: 0 })
   .to(".tablet.multi, .tablet.bathroom", { opacity: 0 }, "-=0.8")
   .to(".tablet.window", { opacity: 0 })
   .from("#tablet-img", { opacity: 0 }, "<")
-  .to("#tablets-svg", {
-    attr: { viewBox: "0 0 792.82 130" },
-    ease: "power1",
-  })
   .from("#tablet-title", { opacity: 0, y: 20, ease: "power1" })
   .from("#tablet-text", { opacity: 0, y: 20, ease: "power1" })
-  .to("#tablet-text span:nth-of-type(1)", { opacity: 0, y: -15 }, "+=0.5")
-  .from("#tablet-text span:nth-of-type(2)", { opacity: 0, y: 15 }, "-=0.5")
-  .to("#tablet-text span:nth-of-type(2)", { opacity: 0, y: -15 }, "+=0.5")
-  .from("#tablet-text span:nth-of-type(3)", { opacity: 0, y: 15 }, "-=0.5")
-  .to("#tablet-text span:nth-of-type(3)", { opacity: 0, y: -15 }, "+=0.5")
-  .from("#tablet-text span:nth-of-type(4)", { opacity: 0, y: 15 }, "-=0.5")
-  .to("#tablet-text span:nth-of-type(4)", { opacity: 0, y: -15 }, "+=0.5")
-  .from("#tablet-text span:nth-of-type(5)", { opacity: 0, y: 15 }, "-=0.5")
+  .to("#tablet-text .word.one", { opacity: 0, y: -15 }, "+=0.5")
+  .from("#tablet-text .word.two", { opacity: 0, y: 15 }, "-=0.5")
+  .to("#tablet-text .word.two", { opacity: 0, y: -15 }, "+=0.5")
+  .from("#tablet-text .word.three", { opacity: 0, y: 15 }, "-=0.5")
+  .to("#tablet-text .word.three", { opacity: 0, y: -15 }, "+=0.5")
+  .from("#tablet-text .word.four", { opacity: 0, y: 15 }, "-=0.5")
+  .to("#tablet-text .word.four", { opacity: 0, y: -15 }, "+=0.5")
+  .from("#tablet-text .word.five", { opacity: 0, y: 15 }, "-=0.5")
   .to("#tablet-title", { opacity: 0, y: -20, ease: "power1" }, "+=0.5")
   .to("#tablet-text", { opacity: 0, y: -10, ease: "power1" }, "<")
-  // .to("#tablets-svg", {
-  //   attr: { viewBox: "0 0 792.82 350" },
-  // })
-  // .to("#tablet-img", { scale: 1, transformOrigin: "50% 50%" }, "<")
-  // .call(tabletResize)
   .to("#tablet-img", { scale: tabletScale, transformOrigin: "50% 50%" }, "<")
-  .call(() => {
-    document.querySelector(".animation-cta").classList.add("hide");
-    console.log("add");
-  })
   .from(".panel.two", { yPercent: 100, duration: 1.5 }, "-=0.5")
   .from("#step1", {
     y: 20,
@@ -194,10 +181,6 @@ tl.to("#tablets-svg .text", { y: 10, opacity: 0 })
     { xPercent: 34, yPercent: -3, scale: 0.88, transformOrigin: "50% 50%" },
     "<"
   )
-  .call(() => {
-    document.querySelector(".animation-cta").classList.remove("hide");
-    console.log("remove");
-  })
   .from(".animation-cta", { opacity: 0, duration: 0.5 }, "-=0.5");
 
 window.addEventListener("load", () => {
