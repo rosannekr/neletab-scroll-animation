@@ -16,6 +16,18 @@ const tl = gsap.timeline({
   },
 });
 
+// Scale text with rotating words down on desktop
+
+const textResize = () => {
+  if (window.innerWidth > 600) {
+    gsap.to("#tablet-text", { scale: 0.8, transformOrigin: "50% 50%" });
+  }
+};
+
+textResize();
+
+// Scale tablet image down depending on screen size
+
 let tabletScale = 1;
 
 const tabletResize = () => {
@@ -27,6 +39,7 @@ const tabletResize = () => {
   else if (width > 550) tabletScale = 0.45;
   else if (width > 500) tabletScale = 0.5;
   else if (width > 400) tabletScale = 0.6;
+  else if (width > 350) tabletScale = 0.65;
   else if (width > 300) tabletScale = 0.7;
   else if (width > 280) tabletScale = 0.8;
   else if (width > 260) tabletScale = 0.9;
@@ -64,6 +77,7 @@ tl.to("#tablets-svg .text", { y: 10, opacity: 0 })
   .to(".tablet.window", { opacity: 0 })
   .from("#tablet-img", { opacity: 0 }, "<")
   .from("#tablet-title", { opacity: 0, y: 20, ease: "power1" })
+  // .to("#tablet-text", { scale: 0.8, transformOrigin: "50% 50%" })
   .from("#tablet-text", { opacity: 0, y: 20, ease: "power1" })
   .to("#tablet-text .word.one", { opacity: 0, y: -15 }, "+=0.5")
   .from("#tablet-text .word.two", { opacity: 0, y: 15 }, "-=0.5")
