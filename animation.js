@@ -75,7 +75,11 @@ tl.to("#tablets-svg .text", { y: 10, opacity: 0 })
   .from("#tablet-text .word.five", { opacity: 0, y: 15 }, "-=0.5")
   .to("#tablet-title", { opacity: 0, y: -20, ease: "power1" }, "+=0.5")
   .to("#tablet-text", { opacity: 0, y: -10, ease: "power1" }, "<")
-  .to("#tablet-img", { scale: tabletScale, transformOrigin: "50% 50%" }, "<")
+  .to(
+    "#tablet-img",
+    { scale: tabletScale, transformOrigin: "50% 50%", y: 100 },
+    "<"
+  )
   .from(".panel.two", { yPercent: 100, duration: 1.5 }, "-=0.5")
   .from("#step1", {
     y: 20,
@@ -173,12 +177,12 @@ tl.to("#tablets-svg .text", { y: 10, opacity: 0 })
   .from("#bottle-green, #bottle-yellow", { opacity: 0, duration: 0.1 }, "<")
   .to(
     "#bottle-green",
-    { xPercent: -33, yPercent: -3, scale: 0.9, transformOrigin: "50% 50%" },
+    { xPercent: -33, scale: 0.9, transformOrigin: "50% 50%" },
     "<"
   )
   .to(
     "#bottle-yellow",
-    { xPercent: 34, yPercent: -3, scale: 0.88, transformOrigin: "50% 50%" },
+    { xPercent: 34, scale: 0.88, transformOrigin: "50% 50%" },
     "<"
   )
   .from(".animation-cta", { opacity: 0, duration: 0.5 }, "-=0.5");
