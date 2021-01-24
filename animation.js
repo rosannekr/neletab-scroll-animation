@@ -1,8 +1,12 @@
 gsap.registerPlugin(ScrollTrigger);
 
+// Avoid Flash Of Unstyled Content
+
 const init = () => {
   gsap.from(".scroll-container", { autoAlpha: 0 });
 };
+
+// Initialize timeline
 
 const tl = gsap.timeline({
   defaults: { ease: "linear", duration: 1 },
