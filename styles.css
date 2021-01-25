@@ -10,6 +10,11 @@ body {
   font-family: "Work Sans", sans-serif;
 }
 
+header {
+  height: 80vh;
+  background: lightblue;
+}
+
 .scroll-padding {
   height: 100vh;
 }

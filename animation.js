@@ -17,6 +17,7 @@ const tl = gsap.timeline({
     end: "+=1000%",
     markers: true,
     pin: true,
+    // pinReparent: true,
     once: true,
     onLeave: () => {
       console.log("done");
@@ -233,6 +234,9 @@ tl.to("#tablets-svg .text", { y: 10, opacity: 0 })
         if (tl.scrollTrigger) tl.scrollTrigger.kill(true);
         // stay in end frame of animation
         tl.progress(1);
+        // const elem = document.querySelector(".scroll-container");
+        // document.documentElement.scrollTop =
+        //   elem.offsetTop - (innerHeight / 2 - elem.offsetHeight / 2);
       },
     },
     "-=0.5"
