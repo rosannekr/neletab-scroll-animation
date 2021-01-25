@@ -85,6 +85,10 @@ body {
   position: absolute;
 }
 
+.right p {
+  margin: 1em 0;
+}
+
 /* Button */
 
 .animation-cta {
@@ -111,10 +115,6 @@ body {
   }
 
   .right h3 {
-    margin: 0.25em;
-  }
-
-  .right p {
     margin: 0.25em;
   }
 

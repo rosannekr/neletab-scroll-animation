@@ -25,6 +25,8 @@ const tl = gsap.timeline({
 const textResize = () => {
   if (window.innerWidth > 600) {
     gsap.to("#tablet-text", { scale: 0.8, transformOrigin: "50% 50%" });
+  } else {
+    gsap.to("#tablet-text", { scale: 1.2, transformOrigin: "50% 50%" });
   }
 };
 
@@ -50,6 +52,18 @@ const tabletResize = () => {
 };
 
 tabletResize();
+
+// Move tablet image down depending on screen size
+
+let tabletPosition = 0;
+
+const tabletPositioning = () => {
+  if (window.innerWidth > 600) {
+    tabletPosition = 100;
+  }
+};
+
+tabletPositioning();
 
 // Timeline
 
@@ -95,7 +109,7 @@ tl.to("#tablets-svg .text", { y: 10, opacity: 0 })
   .to("#tablet-text", { opacity: 0, y: -10, ease: "power1" }, "<")
   .to(
     "#tablet-img",
-    { scale: tabletScale, transformOrigin: "50% 50%", y: 100 },
+    { scale: tabletScale, transformOrigin: "50% 50%", y: tabletPosition },
     "<"
   )
   .from(".panel.two", { yPercent: 100, duration: 1.5 }, "-=0.5")
@@ -189,7 +203,7 @@ tl.to("#tablets-svg .text", { y: 10, opacity: 0 })
   .from("#bottle-blue", { opacity: 0 })
   .to("#bottle-cap, #bottle, #waves", { opacity: 0 }, "<")
   .to("#bottle-svg", {
-    attr: { viewBox: "-105 -50 425 620" },
+    attr: { viewBox: "-105 -50 425 670" },
     height: "60%",
   })
   .from("#bottle-green, #bottle-yellow", { opacity: 0, duration: 0.1 }, "<")
@@ -203,6 +217,7 @@ tl.to("#tablets-svg .text", { y: 10, opacity: 0 })
     { xPercent: 34, scale: 0.88, transformOrigin: "50% 50%" },
     "<"
   )
+  .from("#tablet-images", { opacity: 0 }, "<")
   .from(".animation-cta", { opacity: 0, duration: 0.5 }, "-=0.5");
 
 window.addEventListener("load", () => {
