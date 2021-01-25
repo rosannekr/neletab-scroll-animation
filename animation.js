@@ -17,6 +17,11 @@ const tl = gsap.timeline({
     end: "+=1000%",
     markers: true,
     pin: true,
+    once: true,
+    onLeave: () => {
+      console.log("done");
+      gsap.set(".scroll-container", { y: 0 });
+    },
   },
 });
 
@@ -208,19 +213,31 @@ tl.to("#tablets-svg .text", { y: 10, opacity: 0 })
   })
   .from("#bottle-green, #bottle-yellow", { opacity: 0, duration: 0.1 }, "<")
   .to(
-    "#bottle-green",
-    { xPercent: -33, scale: 0.9, transformOrigin: "50% 50%" },
+    "#bottle-yellow",
+    { xPercent: -33, y: -11, scale: 0.9, transformOrigin: "50% 50%" },
     "<"
   )
   .to(
-    "#bottle-yellow",
-    { xPercent: 34, scale: 0.88, transformOrigin: "50% 50%" },
+    "#bottle-green",
+    { xPercent: 34.5, y: -12, scale: 0.9, transformOrigin: "50% 50%" },
     "<"
   )
   .from("#tablet-images", { opacity: 0 }, "<")
-  .from(".animation-cta", { opacity: 0, duration: 0.5 }, "-=0.5");
+  .from(
+    ".animation-cta",
+    {
+      opacity: 0,
+      duration: 0.5,
+      onComplete: () => {
+        // remove pin-spacer element
+        if (tl.scrollTrigger) tl.scrollTrigger.kill(true);
+        // stay in end frame of animation
+        tl.progress(1);
+      },
+    },
+    "-=0.5"
+  );
 
 window.addEventListener("load", () => {
-  console.log("page is fully loaded");
   init();
 });
