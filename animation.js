@@ -17,11 +17,10 @@ const tl = gsap.timeline({
     end: "+=1000%",
     markers: true,
     pin: true,
-    // pinReparent: true,
-    once: true,
-    onLeave: () => {
-      console.log("done");
-      gsap.set(".scroll-container", { y: 0 });
+    snap: {
+      snapTo: "labelsDirectional",
+      ease: "power1.out",
+      delay: 0,
     },
   },
 });
@@ -74,7 +73,6 @@ tabletPositioning();
 // Timeline
 
 tl.to("#tablets-svg .text", { y: 10, opacity: 0 })
-  .add("tabletMorph")
   .to(".tablet.bathroom", {
     x: 250,
     duration: 2,
@@ -82,7 +80,7 @@ tl.to("#tablets-svg .text", { y: 10, opacity: 0 })
   .to(
     ".tablet.bathroom",
     { scaleX: 0.7, transformOrigin: "100% 50%", duration: 2 },
-    "tabletMorph"
+    "<"
   )
   .to(
     ".tablet.multi",
@@ -90,27 +88,31 @@ tl.to("#tablets-svg .text", { y: 10, opacity: 0 })
       x: -250,
       duration: 2,
     },
-    "tabletMorph"
+    "<"
   )
   .to(
     ".tablet.multi",
     { scaleX: 0.7, transformOrigin: "0% 50%", duration: 2 },
-    "tabletMorph"
+    "<"
   )
   .to(".tablet.multi, .tablet.bathroom", { opacity: 0 }, "-=0.8")
   .to(".tablet.window", { opacity: 0 })
   .from("#tablet-img", { opacity: 0 }, "<")
   .from("#tablet-title", { opacity: 0, y: 20, ease: "power1" })
-  // .to("#tablet-text", { scale: 0.8, transformOrigin: "50% 50%" })
   .from("#tablet-text", { opacity: 0, y: 20, ease: "power1" })
+  .add("tabletText")
   .to("#tablet-text .word.one", { opacity: 0, y: -15 }, "+=0.5")
   .from("#tablet-text .word.two", { opacity: 0, y: 15 }, "-=0.5")
+  .add("word1")
   .to("#tablet-text .word.two", { opacity: 0, y: -15 }, "+=0.5")
   .from("#tablet-text .word.three", { opacity: 0, y: 15 }, "-=0.5")
+  .add("word2")
   .to("#tablet-text .word.three", { opacity: 0, y: -15 }, "+=0.5")
   .from("#tablet-text .word.four", { opacity: 0, y: 15 }, "-=0.5")
+  .add("word3")
   .to("#tablet-text .word.four", { opacity: 0, y: -15 }, "+=0.5")
   .from("#tablet-text .word.five", { opacity: 0, y: 15 }, "-=0.5")
+  .add("word4")
   .to("#tablet-title", { opacity: 0, y: -20, ease: "power1" }, "+=0.5")
   .to("#tablet-text", { opacity: 0, y: -10, ease: "power1" }, "<")
   .to(
@@ -130,6 +132,7 @@ tl.to("#tablets-svg .text", { y: 10, opacity: 0 })
     },
     "+=0.5"
   )
+  .add("step1")
   .to(
     "#step1, #tip1",
     {
@@ -173,6 +176,7 @@ tl.to("#tablets-svg .text", { y: 10, opacity: 0 })
   })
   .from("#waves", { opacity: 0.7 }, "<")
   .to("#tablet-img", { opacity: 0 }, "<")
+  .add("step2")
   .to(
     "#step2, #tip2",
     {
@@ -185,12 +189,10 @@ tl.to("#tablets-svg .text", { y: 10, opacity: 0 })
     y: 20,
     opacity: 0,
   })
-  .add("cap")
   .from("#bottle-cap", { yPercent: -100, opacity: 0 }, "<")
   .from("#cap-mask-rect", { y: -500 }, "<")
   .to("#bottle-cap", { x: -8 }, "<")
   .fromTo("#bottle-cap", { x: -8 }, { x: 0, duration: 0.5 }, "-=0.5")
-
   .from(
     "#tip3",
     {
@@ -198,6 +200,7 @@ tl.to("#tablets-svg .text", { y: 10, opacity: 0 })
     },
     "+=0.5"
   )
+  .add("step3")
   .to(
     "#step3, #tip3",
     {
@@ -229,18 +232,10 @@ tl.to("#tablets-svg .text", { y: 10, opacity: 0 })
     {
       opacity: 0,
       duration: 0.5,
-      onComplete: () => {
-        // remove pin-spacer element
-        if (tl.scrollTrigger) tl.scrollTrigger.kill(true);
-        // stay in end frame of animation
-        tl.progress(1);
-        // const elem = document.querySelector(".scroll-container");
-        // document.documentElement.scrollTop =
-        //   elem.offsetTop - (innerHeight / 2 - elem.offsetHeight / 2);
-      },
     },
     "-=0.5"
-  );
+  )
+  .add("final");
 
 window.addEventListener("load", () => {
   init();
