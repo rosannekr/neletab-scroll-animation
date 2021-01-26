@@ -243,7 +243,6 @@ tl.to("#tablets-svg .text", { y: 10, opacity: 0 })
     },
     "-=0.5"
   )
-  // .from("#scrollToTopBtn", { opacity: 0 })
   .add("final");
 
 window.addEventListener("load", () => {
