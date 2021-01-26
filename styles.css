@@ -46,6 +46,23 @@ header {
   /* border: 2px solid blue; */
 }
 
+#scrollToTopBtn {
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
+  z-index: 999;
+  color: black;
+  background: white;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  display: none;
+}
+
+#scrollToTopBtn:focus {
+  outline: none;
+}
+
 /* Tablets */
 
 #tablets-svg {

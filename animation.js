@@ -1,5 +1,7 @@
 gsap.registerPlugin(ScrollTrigger);
 
+const backToTopButton = document.querySelector("#scrollToTopBtn");
+
 // Avoid Flash Of Unstyled Content
 
 const init = () => {
@@ -21,6 +23,12 @@ const tl = gsap.timeline({
       snapTo: "labelsDirectional",
       ease: "power1.out",
       delay: 0,
+    },
+    onLeave: () => {
+      backToTopButton.style.display = "block";
+    },
+    onEnterBack: () => {
+      backToTopButton.style.display = "none";
     },
   },
 });
@@ -235,8 +243,14 @@ tl.to("#tablets-svg .text", { y: 10, opacity: 0 })
     },
     "-=0.5"
   )
+  // .from("#scrollToTopBtn", { opacity: 0 })
   .add("final");
 
 window.addEventListener("load", () => {
   init();
+});
+
+backToTopButton.addEventListener("click", () => {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 });
