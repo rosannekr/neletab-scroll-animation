@@ -222,7 +222,7 @@ tl.to("#tablets-svg .text", { y: 10, opacity: 0 })
   .from("#bottle-blue", { opacity: 0 }, "<")
   .to("#bottle-cap, #bottle, #waves", { opacity: 0 }, "<")
   .to("#bottle-svg", {
-    attr: { viewBox: "-105 -50 425 670" },
+    attr: { viewBox: "-105 -100 425 720" },
     height: "60%",
   })
   .from("#bottle-green, #bottle-yellow", { opacity: 0, duration: 0.1 }, "<")
