@@ -7,7 +7,7 @@ const backToTopButton = document.querySelector("#scrollToTopBtn");
 const init = () => {
   gsap.from(".scroll-container", { autoAlpha: 0 });
 
-  // gsap.set(".animation-cta", { display: "none" });
+  gsap.set("#tablet-img-final", { rotation: 180, transformOrigin: "50% 50%" });
 };
 
 // Initialize timeline
