@@ -54,16 +54,13 @@ let tabletScale = 1;
 const tabletResize = () => {
   let width = window.innerWidth;
 
-  if (width > 700) tabletScale = 0.45;
-  else if (width > 650) tabletScale = 0.5;
-  else if (width > 600) tabletScale = 0.4;
-  else if (width > 550) tabletScale = 0.45;
-  else if (width > 500) tabletScale = 0.5;
-  else if (width > 400) tabletScale = 0.6;
-  else if (width > 350) tabletScale = 0.65;
-  else if (width > 300) tabletScale = 0.7;
-  else if (width > 280) tabletScale = 0.8;
-  else if (width > 260) tabletScale = 0.9;
+  if (width > 649) tabletScale = 0.5;
+  else if (width > 599) tabletScale = 0.4;
+  else if (width > 549) tabletScale = 0.45;
+  else if (width > 499) tabletScale = 0.5;
+  else if (width > 399) tabletScale = 0.6;
+  else if (width > 349) tabletScale = 0.55;
+  else tabletScale = 0.5;
 };
 
 tabletResize();
