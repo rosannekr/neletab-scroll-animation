@@ -6,6 +6,8 @@ const backToTopButton = document.querySelector("#scrollToTopBtn");
 
 const init = () => {
   gsap.from(".scroll-container", { autoAlpha: 0 });
+
+  // gsap.set(".animation-cta", { display: "none" });
 };
 
 // Initialize timeline
@@ -217,7 +219,10 @@ tl.to("#tablets-svg .text", { y: 10, opacity: 0 })
     },
     "+=0.5"
   )
-  .from("#bottle-blue", { opacity: 0 })
+  .from(".animation-cta", {
+    display: "none",
+  })
+  .from("#bottle-blue", { opacity: 0 }, "<")
   .to("#bottle-cap, #bottle, #waves", { opacity: 0 }, "<")
   .to("#bottle-svg", {
     attr: { viewBox: "-105 -50 425 670" },
@@ -235,14 +240,10 @@ tl.to("#tablets-svg .text", { y: 10, opacity: 0 })
     "<"
   )
   .from("#tablet-images", { opacity: 0 }, "<")
-  .from(
-    ".animation-cta",
-    {
-      opacity: 0,
-      duration: 0.5,
-    },
-    "-=0.5"
-  )
+  .from(".animation-cta", {
+    opacity: 0,
+    duration: 0.5,
+  })
   .add("final");
 
 window.addEventListener("load", () => {
