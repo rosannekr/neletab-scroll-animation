@@ -219,9 +219,6 @@ tl.to("#tablets-svg .text", { y: 10, opacity: 0 })
     },
     "+=0.5"
   )
-  .from(".animation-cta", {
-    display: "none",
-  })
   .from("#bottle-blue", { opacity: 0 }, "<")
   .to("#bottle-cap, #bottle, #waves", { opacity: 0 }, "<")
   .to("#bottle-svg", {
