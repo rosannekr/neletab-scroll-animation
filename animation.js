@@ -5,8 +5,9 @@ const backToTopButton = document.querySelector("#scrollToTopBtn");
 // Avoid Flash Of Unstyled Content
 
 const init = () => {
-  gsap.from(".scroll-container", { autoAlpha: 0 });
+  gsap.from("#scroll-container", { autoAlpha: 0 });
 
+  // Turn tablet image around to have shadow on the bottom
   gsap.set("#tablet-img-final", { rotation: 180, transformOrigin: "50% 50%" });
 };
 
@@ -15,17 +16,17 @@ const init = () => {
 const tl = gsap.timeline({
   defaults: { ease: "linear", duration: 1 },
   scrollTrigger: {
-    trigger: ".scroll-container",
+    trigger: "#scroll-container",
     scrub: true,
     start: "top top",
     end: "+=1000%",
-    markers: true,
+    // markers: true,
     pin: true,
-    snap: {
-      snapTo: "labelsDirectional",
-      ease: "power1.out",
-      delay: 0,
-    },
+    // snap: {
+    //   snapTo: "labelsDirectional",
+    //   ease: "power1.out",
+    //   delay: 0,
+    // },
     onLeave: () => {
       backToTopButton.style.display = "block";
     },
